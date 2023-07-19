@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+    <style>
+        h1 {
+            text-align: center;
+            padding: 20px;
+        }
+        
+        .card {
+            height: 100%;
+        }
+        
+        .card-title {
+            font-size: 1.5rem;
+            font-weight: bold;
+        }
+        
+        .card-text {
+            margin-bottom: 10px;
+        }
+        
+        .d-grip {
+            text-align: center;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Rutas</h1>
+
+    <div class="container">
+        <div class="row row-cols-1 row-cols-md-3 g-4">
+            <div class="col animated fadeIn fast" *ngFor="let Ruta of rutas; let i=index">
+                <div class="card h-100">
+                    <div class="card-body">
+                        <h5 class="card-title">{{Ruta.origen}}</h5>
+                        <p class="card-text">{{Ruta.destino}}</p>
+                        <p class="card-text">{{Ruta.precio}}</p>
+                        <p class="card-text">{{Ruta.tipo}}</p>
+
+                        <div class="d-grip gap-2 col-6 mx-auto">
+                            <button (click)="verRuta(i)" type="button" class="btn btn-outline-primary">Ver más</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
+</body>
+
+</html>
